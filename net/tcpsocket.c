@@ -32,11 +32,6 @@
 #include "log.h"
 
 
-extern dict *db[THREADCNT];
-extern eventLoop *globalEloop[THREADCNT];
-extern connTree *globalconnTree[THREADCNT];
-extern pthread_mutex_t connLock[THREADCNT];
-
 static int tcpRead(conn *connection, int fd, buffer *buf) {
     int i = 0;
     int nread = -2;

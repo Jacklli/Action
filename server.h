@@ -23,7 +23,18 @@
 #define PORT      33060
 #define READABLE 1
 
-pthread_mutex_t connLock[THREADCNT];
+
+extern int serverport;
+extern int listenfd;
+
+extern dict *db[THREADCNT];
+extern eventLoop *globalEloop[THREADCNT];
+extern connTree *globalconnTree[THREADCNT];
+extern pthread_mutex_t lock[THREADCNT];
+extern pthread_mutex_t eloopidLock;
+extern int eloopid;
+
+extern pthread_mutex_t connLock[THREADCNT];
 
 typedef struct Server {
     int listenfd;

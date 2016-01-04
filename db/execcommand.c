@@ -18,9 +18,6 @@
 #include "server.h"
 #include "log.h"
 
-extern dict *db[THREADCNT];
-extern pthread_mutex_t lock[THREADCNT];
-
 int chrtoint(char *str) {
     int size = 0;
     unsigned int intval = 0;
@@ -52,34 +49,29 @@ static valObject *lookupKey(dict *db, char *key) {
         return NULL;
 }
 
-/*
-* fill your own logic here.
-* 
-*
-*
-*
-*
 int execSetCommand(char (*argv)[ARGUMENTCNT]) {
-    valObject *val = createObj(argv[2]);
-    return setCommand(argv[1], val);
+//    valObject *val = createObj(argv[2]);
+//    return setCommand(argv[1], val);
+    return 1;
 }
 valObject *execGetCommand(char (*argv)[ARGUMENTCNT]) {
-    int dbindex = -1;
-    valObject *val;
-    dbindex = chrtoint(argv[1])%(THREADCNT);
-    val = lookupKey(db[dbindex], argv[1]);
-    return val;
+//    int dbindex = -1;
+//    valObject *val;
+//    dbindex = chrtoint(argv[1])%(THREADCNT);
+//    val = lookupKey(db[dbindex], argv[1]);
+//    return val;
+    return NULL;
 }
 
 void execShutdownCommand(dict *db) {
-    writeLog(1, "start to clear db...");
-    dictRelease(db);
-    writeLog(1, "db cleared...");
-
+//    writeLog(1, "start to clear db...");
+//    dictRelease(db);
+//    writeLog(1, "db cleared...");
+/*
 *  TODO
 *  Implement all connections free here.
-    sleep(5);
-    writeLog(1, "start to shutdown...");
-    exit(1);
-}
 */
+//    sleep(5);
+//    writeLog(1, "start to shutdown...");
+//    exit(1);
+}
