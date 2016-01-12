@@ -34,7 +34,7 @@ pthread_mutex_t lock[THREADCNT];
 pthread_mutex_t eloopidLock;
 int eloopid = 0;
 
-pthread_mutex_t connLock[THREADCNT];
+pthread_mutex_t connLock;
 
 
 /* these global variables are exposed to all threads */
