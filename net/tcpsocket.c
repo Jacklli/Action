@@ -56,7 +56,7 @@ static int tcpRead(conn *connection, int fd, buffer *buf) {
             return -1;
         }
         connection->commandCnt = connection->decod(connection->buf);
-        connection->db = db[atoi(connection->buf->argv[1])%THREADCNT];
+//        connection->db = db[atoi(connection->buf->argv[1])%THREADCNT];
         while(connection->buf->parseFlag != 1 && connection->buf->parseFlag != -1) {     
             if(connection->buf->argv[0] && strcmp(connection->buf->argv[0], "set") ==0 ) {
                 execSetCommand(connection->buf->argv);
